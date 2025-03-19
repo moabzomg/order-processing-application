@@ -1,0 +1,273 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 50px;
+  font-size: 2.5rem;
+}
+
+.app {
+  padding: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.product {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product-info h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+.product-info{
+  padding-bottom: 6px;
+}
+input.quantity-input {
+  width: 50px;
+  padding: 8px;
+  margin-right: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#addButton, #minusButton {
+  padding:1px;
+}
+th {
+  text-align: left;
+}
+
+.view-cart {
+  display: block;
+  margin: 40px auto;
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-cart:hover {
+  background-color: #0056b3;
+}
+
+/* Modal Styles */
+.cart-modal {
+  position: relative;
+  top: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cart-modal h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-modal .cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-modal .cart-footer button {
+  background-color: #dc3545;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+}
+
+.cart-modal .cart-footer button:hover {
+  background-color: #c82333;
+}
+
+.cart-modal .cart-footer button:disabled {
+  background-color: #6c757d;
+}
+
+/* Cart Item Styles */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-item p {
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+
+.cart-item .quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item .quantity-controls input {
+  font-size: 1.2rem;
+  width: 50px;
+  text-align: center;
+  margin: 0 10px;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.cart-item .remove-btn {
+  background-color: #ffc107;
+  color: white;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-item .remove-btn:hover {
+  background-color: #e0a800;
+}
+
+/* Success Message */
+
+.cart-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.cart-item td {
+  padding: 10px;
+  text-align: center;
+}
+
+.item-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-button:hover {
+  background-color: #0056b3;
+}
+
+.quantity-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.quantity-input {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.quantity-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.item-price,
+.item-total {
+  font-weight: bold;
+  color: #333;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.shipping-address textarea{
+  width: 400px;
+}
+
+.simulate-cart{
+  margin-top:10px;
+  justify-content: center;
+}
