@@ -265,6 +265,10 @@ th {
 
 .shipping-address textarea{
   width: 400px;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .simulate-cart{

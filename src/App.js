@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import CartItem from "./Components/CartItem";
 import Modal from "react-modal";
-import Checkout from "./Components/Checkout";
 import Success from "./Components/Success";
 
 Modal.setAppElement("#root");
@@ -20,7 +19,7 @@ const App = () => {
   const [isCheckoutComplete, setIsCheckoutComplete] = useState(false);
   const [message, setMessage] = useState("");
   const [shippingAddress, setShippingAddress] = useState(
-    "194a King Street; Hammersmith and Fulham; London; W6 0RA"
+    "Your Address"
   );
 
   const addToCart = (productName, quantity = 1) => {
@@ -73,13 +72,13 @@ const App = () => {
   };
 
   const handleSimulateClick = () => {
-    addToCart("Apple", 1);
-    addToCart("Banana", 1);
+    addToCart("Apple", 3);
+    addToCart("Banana", 5);
 
     setTimeout(() => {
       updateQuantity("Banana", 2);
       removeFromCart("Apple");
-    }, 2000);
+    }, 4000);
 
     setTimeout(() => {
       setIsCartOpen(true);
@@ -87,17 +86,17 @@ const App = () => {
 
     setTimeout(() => {
       setShippingAddress("My address");
-    }, 4000);
+    }, 6000);
 
     setTimeout(() => {
       handleCheckout();
       setIsCartOpen(false);
-    }, 6000);
+    }, 8000);
   };
 
   return (
     <div className="app">
-      <h1>Order Process Application</h1>
+      <h1>Order Processing Application</h1>
       {message && <div className="message">{message}</div>}
       <div className="product-list">
         {products.map((product) => (
@@ -105,7 +104,17 @@ const App = () => {
             <div className="product-info">
               <h2>{product.name}</h2>
               <p>£{product.price.toFixed(2)}</p>
+              <button
+                    className="quantity-button minus"
+                    onClick={() =>
+                      cartItem && updateQuantity(product.name, cartItem.quantity - 1)
+                    }
+                    disabled={!cartItem}
+                  >
+                    -
+                  </button>
               <input
+                className="quantity-input"
                 type="number"
                 min="1"
                 defaultValue="1"
@@ -113,6 +122,15 @@ const App = () => {
                   addToCart(product.name, parseInt(e.target.value))
                 }
               />
+              <button
+                    className="quantity-button plus"
+                    onClick={() =>
+                      cartItem && updateQuantity(product.name, cartItem.quantity + 1)
+                    }
+                    disabled={!cartItem}
+                  >
+                    +
+                  </button>
             </div>
             <button onClick={() => addToCart(product.name)}>Add to Cart</button>
           </div>
